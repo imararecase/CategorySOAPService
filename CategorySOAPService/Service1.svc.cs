@@ -8,26 +8,17 @@ using System.Text;
 
 namespace CategorySOAPService
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
-    // NOTE: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione Service1.svc o Service1.svc.cs en el Explorador de soluciones e inicie la depuración.
-    public class Service1 : IService1
+    public class CategoryService : ICategoryService
     {
-        public string GetData(int value)
+        public List<Category> GetCategories()
         {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
+            return new List<Category>
             {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+                new Category { Id = 1, Name = "Electronics" },
+                new Category { Id = 2, Name = "Books" },
+                new Category { Id = 3, Name = "Clothing" }
+            };
         }
     }
+
 }
