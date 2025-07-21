@@ -13,6 +13,10 @@ namespace CategorySOAPService
     {
         [OperationContract]
         List<Category> GetCategories();
+
+        [OperationContract]
+        Category GetCategoryById(int id);
+
     }
 
     [DataContract]

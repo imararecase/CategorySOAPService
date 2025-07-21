@@ -19,6 +19,13 @@ namespace CategorySOAPService
                 new Category { Id = 3, Name = "Clothing" }
             };
         }
+
+        public Category GetCategoryById(int id)
+        {
+            var categories = GetCategories();
+            return categories.FirstOrDefault(c => c.Id == id);
+        }
+
     }
 
 }
